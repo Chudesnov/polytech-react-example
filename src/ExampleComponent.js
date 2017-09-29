@@ -1,6 +1,7 @@
 import React from 'react';
+import localStored from './decorators/localStored';
 
-export default class ExampleComponent extends React.Component {
+class ExampleComponent extends React.Component {
     constructor() {
         super();
 
@@ -10,10 +11,14 @@ export default class ExampleComponent extends React.Component {
         this.handleChange = this.handleChange.bind(this);
     }
     componentWillMount() {
-
     }
     componentDidMount() {
-        this.input.value;
+        if (this.props.initialValue && !this.state.value) {
+            this.input.value = this.props.initialValue;
+            this.setState({
+                value: this.props.initialValue
+            });
+        }
     }
     componentWillReceiveProps(nextProps) {
         nextProps;
@@ -31,6 +36,7 @@ export default class ExampleComponent extends React.Component {
         this.setState({
             value: event.target.value
         });
+        this.props.onChange(event.target.value);
     }
     render() {
         return <div>
@@ -43,3 +49,10 @@ export default class ExampleComponent extends React.Component {
     }
 }
 
+ExampleComponent.defaultProps = {
+    onChange: () => {}
+}
+
+const localStoredExample = localStored('example', ExampleComponent);
+
+export default localStoredExample;
