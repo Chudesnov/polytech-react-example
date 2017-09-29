@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import Example from './src/ExampleComponent';
 
 ReactDOM.render(
-    <p>
+    <section>
         <span>It works again</span>
         <Example />
-    </p>, 
+    </section>,
     document.getElementById('root')
 );
