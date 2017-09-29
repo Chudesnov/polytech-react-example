@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import localStored from './decorators/localStored';
 
 class ExampleComponent extends React.Component {
@@ -47,6 +48,11 @@ class ExampleComponent extends React.Component {
             <p>{this.state.value}</p>
         </div>;
     }
+}
+
+ExampleComponent.propTypes = {
+    initialValue: PropTypes.string,
+    onChange: PropTypes.func
 }
 
 ExampleComponent.defaultProps = {
