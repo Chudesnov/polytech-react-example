@@ -12,7 +12,7 @@
     "precommit": "lint-staged"
   },
   
-  // это настройка lint-staged: указано, что файлы index.js и содержимое src будут проверены и исправлены с помощью prettier --write */
+  /* это настройка lint-staged: указано, что файлы index.js и содержимое src будут проверены и исправлены с помощью prettier --write */
   "lint-staged": {
     "{index.js,src/**/*.js}": [
       "prettier --write",
