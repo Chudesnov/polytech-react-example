@@ -12,8 +12,7 @@
     "precommit": "lint-staged"
   },
   
-  "_comment": "/* это настройка lint-staged: указано, что файлы index.js и содержимое src будут проверены и исправлены с помощью prettier --write */",
-  "lint-staged": {
+  "lint-staged": {
     "{index.js,src/**/*.js}": [
       "prettier --write",
       "git add"
